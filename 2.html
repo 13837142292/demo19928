@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var time=prompt('请输入日期（如2017/9/25):')
+    var date=new Date(time);
+    console.log(date);
+    var m=date.getDay();
+    var end;
+    switch(m){
+        case(0):
+        end='星期日';
+        break;
+        case(1):
+        end='星期一';
+        break;
+        case(2):
+        end='星期二';
+        break;
+        case(3):
+        end='星期三';
+        break;
+        case(4):
+        end='星期四';
+        break;
+        case(5):
+        end='星期五';
+        break;
+        default:
+        end='星期六'
+        break;
+    }
+    document.write(end);
+    </script>
+</body>
+</html>
