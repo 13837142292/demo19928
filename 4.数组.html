@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [10, 90, 300];
+
+        //用函数实现为数组新增一个数据
+        function addItem(arr) {
+            arr[arr.length] = 200;
+            console.log(arr);
+        }
+
+        // addItem(arr);//引用类型赋值，传递的是地址
+
+        // console.log(arr);
+
+        //用函数实现为数组新增一个数据，不能修改原数组
+        function addItem1(arr) {
+            var arr0 = []; //新数组
+            //数组copy
+            for (var i = 0; i < arr.length; i++) {
+                arr0[i] = arr[i];
+            }
+            arr0[arr0.length] = 200;
+            console.log(arr0);
+        }
+
+        addItem1(arr);
+        console.log(arr);
+    </script>
+</body>
+
+</html>

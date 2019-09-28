@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建学生  
+        /*
+            优点：能够批量创建对象
+            缺点：会为每一个对象均添加方法，会造成内存浪费
+        */
+        //工厂模式
+        function createStudent(no,name,age,grade){
+            var obj=new Object();//创建一个对象
+            //添加属性
+            obj.no=no;
+            obj.name=name;
+            obj.age=age;
+            obj.grade=grade;
+            //添加方法
+            obj.test=function(){
+                console.log(this.name+"在考试......");
+            };
+            return obj;
+        }
+
+        var s1=createStudent('1000','李四',20,'一年级');
+        var s2=createStudent('1001','王五',30,'二年级');
+
+        s1.test();
+        s2.test();
+        console.log(s1);
+        console.log(s2);
+        console.log(s1.test==s2.test);//false
+    </script>
+</body>
+</html>
